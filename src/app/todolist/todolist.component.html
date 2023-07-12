@@ -3,14 +3,37 @@
 <div class="container">
     <h1>To-Do Aplaccition</h1>
     <hr>
-    <form>
+    <form #taskForm="ngForm">
     <div class="mb-3">
-      <label for="task" class="form-label">Task</label>
-      <input type="text" class="form-control" id="task" >
+        
+      <label  for="task" >Task</label>
+      <input type="text" class="form-control" id="task" placeholder="Enter task" ngModel name="task" >
   <small id="errorMessage" class="form-text text-danger">Required field</small>
     </div>
     
    
     <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
   </form>
+<hr>
+
+
+<table class="table">
+    <thead>
+      <tr>
+   
+        <th scope="col">Task</th>
+        <th scope="col">Completed</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+   
+        <td>Mark</td>
+        <td><input id="myCheckbox" type="checkbox" ></td>
+        <td><button class="btn btn-danger btn-sm" > Delete</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
  </div>
