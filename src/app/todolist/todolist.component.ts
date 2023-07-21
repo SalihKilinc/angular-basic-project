@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
   styleUrls: ['./todolist.component.css']
 })
-export class TodolistComponent {
+export class TodolistComponent implements OnInit {
 
+  constructor(){ }
+  ngOnInit(): void {
+  
+  }
+
+
+
+onSubmit(form: NgForm){
+
+}
 }
