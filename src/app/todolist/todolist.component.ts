@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { mapToCanActivateChild } from '@angular/router';
-
 
 @Component({
   selector: 'app-todolist',
@@ -10,19 +8,23 @@ import { mapToCanActivateChild } from '@angular/router';
 })
 export class TodolistComponent implements OnInit {
 
-  taskArray = [{taskName: "Brush teeth" , isCompleted: false}]
+  taskArray = [{taskName: "Brush teeth", isCompleted: false}];
 
-  constructor(){ }
+  constructor() { }
+
   ngOnInit(): void {
-  
   }
 
+  onSubmit(form: NgForm) {
+    console.log(form);
+    this.taskArray.push({
+      taskName: form.controls["task"].value,
+      isCompleted: false
+    });
+    form.reset(); // Formu sıfırla
+  }
 
-
-onSubmit(form: NgForm){
-console.log(form);
-this.taskArray.push({
-  taskName: form.controls["task"].value,
-  isCompleted: false
-})
-}}//ekleme yaptik
+  onDelete(index: number) {
+    this.taskArray.splice(index, 1); // Belirtilen indeksteki görevi siler
+  }
+}
