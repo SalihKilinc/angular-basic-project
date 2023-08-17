@@ -25,6 +25,7 @@ export class TodolistComponent implements OnInit {
   }
 
   onDelete(index: number) {
+    console.log(index)
     this.taskArray.splice(index, 1); // Belirtilen indeksteki görevi siler
   }
 }

@@ -12,6 +12,7 @@
                 placeholder="Enter task"
                 ngModel
                 name="task" 
+                required
             >
             <small
                 id="errorMessage"
@@ -22,6 +23,7 @@
         </div>
 
         <button
+        [disabled]="taskForm.invalid"
             id="submitButton"
             type="submit"
             class="btn btn-primary"
