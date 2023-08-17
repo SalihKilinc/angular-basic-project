@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { mapToCanActivateChild } from '@angular/router';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { NgForm } from '@angular/forms';
 })
 export class TodolistComponent implements OnInit {
 
+  taskArray = [{taskName: "Brush teeth" , isCompleted: false}]
+
   constructor(){ }
   ngOnInit(): void {
   
@@ -17,6 +20,9 @@ export class TodolistComponent implements OnInit {
 
 
 onSubmit(form: NgForm){
-
-}
-}
+console.log(form);
+this.taskArray.push({
+  taskName: form.controls["task"].value,
+  isCompleted: false
+})
+}}//ekleme yaptik

@@ -41,9 +41,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="
+            let t of taskArray">
 
-                <td>Mark</td>
+                <td>{{t.taskName}}</td>
                 <td>
                     <input
                         id="myCheckbox"
