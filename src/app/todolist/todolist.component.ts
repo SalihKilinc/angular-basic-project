@@ -28,4 +28,8 @@ export class TodolistComponent implements OnInit {
     console.log(index)
     this.taskArray.splice(index, 1); // Belirtilen indeksteki görevi siler
   }
+onCheck(index: number){
+  console.log(this.taskArray)
+  this.taskArray[index].isCompleted=!  this.taskArray[index].isCompleted
+}
 }
